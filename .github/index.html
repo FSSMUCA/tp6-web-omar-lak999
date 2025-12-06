@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini-Application Web Avancée | Calculatrice</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Mini-Calculatrice Web Avancée</h1>
+        <p>HTML, CSS (Flexbox/Grid), JavaScript (DOM)</p>
+    </header>
+
+    <main class="container">
+        <section id="calculator-section">
+            <h2>Opérations</h2>
+            <form id="calculator-form">
+                <div class="form-group">
+                    <label for="numberA">Nombre A :</label>
+                    <input type="number" id="numberA" name="numberA" step="any" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="operator">Opération :</label>
+                    <select id="operator" name="operator" required>
+                        <option value="+" selected>+</option>
+                        <option value="-">-</option>
+                        <option value="*">×</option>
+                        <option value="/">÷</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="numberB">Nombre B :</label>
+                    <input type="number" id="numberB" name="numberB" step="any" required>
+                </div>
+                
+                <button type="submit" id="calculate-btn">Calculer</button>
+            </form>
+            
+            <div id="error-messages" class="error-area" aria-live="polite">
+            </div>
+        </section>
+
+        <section id="history-section">
+            <h2>Historique des Opérations</h2>
+            <div id="history-card" class="card">
+                <ul id="history-list">
+                </ul>
+                <p id="empty-history-message">Aucune opération effectuée.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; TP6 - Web Avancé | <a href="info.php">Informations PHP</a></p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,166 @@
+:root {
+    --primary-color: #3498db;
+    --secondary-color: #2ecc71;
+    --background-color: #f4f4f9;
+    --text-color: #333;
+    --error-color: #e74c3c;
+    --card-bg: #fff;
+    --border-radius: 8px;
+    --shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 20px 10px;
+    text-align: center;
+    box-shadow: var(--shadow);
+}
+
+h1, h2 {
+    margin-top: 0;
+}
+
+.container {
+    display: grid;
+    gap: 30px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 30px auto;
+    grid-template-columns: 1fr 1fr;
+}
+
+#calculator-section {
+    background: var(--card-bg);
+    padding: 20px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[type="number"], select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+
+input[type="number"]:focus, select:focus {
+    border-color: var(--primary-color);
+    outline: none;
+}
+
+#calculate-btn {
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+    transition: background-color 0.3s ease, transform 0.1s;
+}
+
+#calculate-btn:hover {
+    background-color: #27ae60;
+    transform: translateY(-2px);
+}
+
+#calculate-btn:active {
+    transform: translateY(0);
+}
+
+.error-area {
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid var(--error-color);
+    background-color: rgba(231, 76, 60, 0.1);
+    color: var(--error-color);
+    border-radius: 4px;
+    font-weight: bold;
+    min-height: 20px;
+}
+
+#history-section h2 {
+    text-align: center;
+    color: var(--primary-color);
+}
+
+#history-card {
+    background: var(--card-bg);
+    padding: 20px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+#history-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#history-list li {
+    padding: 10px 0;
+    border-bottom: 1px dashed #eee;
+    transition: background-color 0.3s ease;
+}
+
+#history-list li:last-child {
+    border-bottom: none;
+}
+
+#history-list li:hover {
+    background-color: #fafafa;
+}
+
+#empty-history-message {
+    text-align: center;
+    color: #999;
+    font-style: italic;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    margin-top: 30px;
+}
+
+footer a {
+    color: var(--secondary-color);
+    text-decoration: none;
+}
+
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr;
+    }
+    
+    #calculator-section, #history-section {
+        margin-bottom: 20px;
+    }
+}
